@@ -1,0 +1,131 @@
+<!-- views/profile.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+input[type="text"] {
+  border: none;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+#home {
+  background-color: blue;
+  color: #4CAF50;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-bottom: 30px;
+  transition: color 0.3s ease;
+}
+
+#home:hover {
+  color: #3e8e41;
+}
+    </style>
+</head>
+<body background="Images\div.jpg">
+    <a href="main.ejs"><button id="home">Home</button></a>
+    <div class="container">
+        <h1 class="mb-4">User Profile</h1>
+        <form action="/updateProfile" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" value="<%= profile.username %>">
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="Name" value="<%= profile.Name %>">
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" name="city" value="<%= profile.city %>">
+            </div>
+            <div class="form-group">
+                <label for="bloodGroup">Blood Group</label>
+                <select id="bloodGroup" name="blood"  required>
+                    <option value="<%= profile.blood %>" ><%= profile.blood %></option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" class="form-control" id="phoneNumber" name="phone"  pattern="[6789][0-9]{9}" 
+                minlength="10" 
+                maxlength="12" value="<%= profile.phone %>">
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</body>
+</html>

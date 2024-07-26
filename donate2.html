@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='Register.css'>
+    <link rel="icon" href='./Images/bb_logo(black).png' type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+        button{
+        display:block;
+        height: auto;
+        width: auto;
+        font-size: medium;
+           margin:auto;
+           border:1px solid black;
+           background-color: brown; 
+        }
+   #home{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 15px;
+    
+   }
+    </style></head>
+<title>Start Saving Lives </title>
+<body>
+
+
+<div class="inner">
+    <div class="user-form">
+        <h1>Online Blood Donation</h1>
+        <a href="main.ejs" id="home" class="btn primary" >home</a>
+        <form method="post" action="/detail">
+            <i class="fas fa-user icon"></i>
+            <input type="text" placeholder="Name" name="Name"required>
+            <br>
+            <i class="fas fa-envelope-square"></i>
+            <input type="email" placeholder="E-mail" name="username" required>
+            <br>
+            <i class="fas fa-lock"></i>
+            <input type="tel" placeholder="Number" name="phone" id="password_data"  pattern="[6789][0-9]{9}" 
+            minlength="10" 
+            maxlength="12" required>
+            <br>
+            <i class="fas fa-lock"></i>
+            <input type="text" placeholder="city" name="city" required>
+            <br>
+            <i class="fas fa-lock"></i>
+            <select id="bloodGroup" name="blood" required>
+                <option value="" selected disabled>Select Blood Group</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+            <br>
+
+            <div class="action-btn">
+                <input type="submit" class="btn primary" value="Donate">
+           
+               
+            </div>
+            
+        </form>
+      
+    </div>
+</div>
+<script src="./Register.js"></script>
+<script >
+  
+</script>
+</body>
+</html>

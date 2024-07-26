@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='help.css'>
+    <link rel="icon" href='./Images/bb_logo(black).png' type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<style>
+    .home{
+            display:block;
+        height: auto;
+        width: auto;
+        font-size: medium;
+           margin:auto;
+           border:1px solid black;
+           background-color: brown; 
+        }
+        #home {
+  background-color: blue;
+  color: #4CAF50;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-bottom: 30px;
+  transition: color 0.3s ease;
+}
+
+#home:hover {
+  color: #3e8e41;
+}
+</style>
+<title>Connect with us </title>
+
+<body>
+
+
+    <a href="main.ejs"><button id="home">Home</button></a>
+
+    <main>
+        <div class="container">
+            <div class="contact-box">
+                <div class="left"></div>
+                <div class="right">
+                    <h2>Connect with us </h2>
+                    <form action="/help" method="post">
+                    <input type="text" class="field" placeholder="Your Name" name="Name">
+                    <input type="text" class="field" placeholder="Your Email" name="username">
+                    <input type="tel" class="field" placeholder="Phone"  pattern="[6789][0-9]{9}" 
+                    minlength="10" 
+                    maxlength="12" name="phone">
+                    <textarea placeholder="Message" class="field" name="message"></textarea>
+                    <button class="btn">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer>
+        <div class="siteFooterBar">
+            <div class="content1">
+                <div class="foot">2021 © All rights reserved.</div>
+            </div>
+        </div>
+        <div class="footer-content">
+            <h3>JOIN OUR CAUSE</h3>
+            <p>Donating blood or platelets can be intimidating and even scary. Time to put those hesitations and fears aside. Learn from online blood donation system and platelet donors how simple and easy it is to roll up a sleeve and help save lives.</p>
+            <div class="socials">
+                <ul class="sci">
+                    <li><a href="https://www.facebook.com/givebloodnhs/" target="_blank"><i
+                                class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/indiablooddonation/?hl=en" target="_blank"><i
+                                class="fab fa-instagram"></i></a></li>
+                    <li><a href="http://nbtc.naco.gov.in/" target="_blank"><i class="fas fa-globe"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </footer>
+    
+
+</body>
+
+</html>

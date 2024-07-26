@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='Register.css'>
+    <link rel="icon" href='./Images/bb_logo(black).png' type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<title>Start Saving Lives </title>
+<body>
+    <header>
+        <div id="nav">
+            <div class="header-list" id="headerl">
+            
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                  
+                 
+                </ul>
+            </div>
+            </div>
+        </header>
+
+<div class="inner">
+    <div class="photo">
+        <img src="./Images/regphoto.png">
+    </div>
+    <div class="user-form">
+        <h1>Online Blood Donation</h1>
+        <form method="post" action="/signup">
+            <i class="fas fa-user icon"></i>
+            <input type="radio" name="role" value="admin" id="admin">
+            <lable for="admin">admin</lable>
+            <input type="radio" name="role" value="user" id="user">
+            <lable for="user">user</lable>
+            <br>
+            <br>
+            <i class="fas fa-user icon"></i>
+            <input type="text" placeholder="Name" name="Name"required>
+            <br>
+            <i class="fas fa-envelope-square"></i>
+            <input type="email" placeholder="E-mail" name="username" required>
+            <br>
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" name="password" id="password_data" required>
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder=" AdminPassword" name="admin_password" id="admin_password" style="visibility: hidden;">
+            <div class="action-btn">
+                <input type="submit" class="btn primary" value="CreateAccount">
+            </div>
+        </form>
+        <a href="login.html"><button class="btn login">login</button></a>
+    </div>
+</div>
+<script src="./Register.js"></script>
+<script>
+    const admin=document.getElementById("admin")
+    admin.addEventListener("click",()=>{
+        const admin1=document.getElementById("admin_password")
+        admin1.setAttribute("")
+    })
+</script>
+</body>
+</html>

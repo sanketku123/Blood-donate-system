@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the navigation bar */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar h1 {
+    margin: 0;
+}
+
+/* Style the container */
+.container {
+    display: flex;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Style the sidebar */
+.sidebar {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.action-buttons {
+    margin-top: 20px;
+}
+
+/* Style action buttons */
+.action-buttons a, .action-buttons button {
+    /* display: block; */
+    width: 100%;
+    padding: 50px;
+    margin-bottom: 100px 100px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #b23e9b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-buttons a:hover, .action-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the main content area */
+.main-content {
+    flex: 2;
+    padding: 20px;
+    background-color: #fff;
+}
+
+h2 {
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+    </style>
+ <link rel="stylesheet" href='main.css'>
+</head>
+<body background="Images\div.jpg">
+    <header>
+       
+        
+        <div id="nav">
+            <div class="header-list" id="headerl">
+               
+                <ul>
+                    <li><a href="Aprofile.ejs">profile</a></li>
+               
+                    <li><a target="_self" href="/logout">logOut</a></li>
+                </ul>
+            </div>
+
+            </div>
+        </header> 
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <h1>Admin Panel</h1>
+    </nav>
+
+    <!-- Main content area -->
+    <div class="container">
+        <!-- Sidebar for action buttons -->
+       
+        <div class="sidebar">
+            <!-- <h1>What you want</h1> -->
+            <!-- <h2>What you want</h2> -->
+            <div class="action-buttons">
+                <a href="/userList" id="add-user-btn">See User or delete user</a>
+                <a href="/donateList" id="add-user-btn">See donation list or delete any donation list</a>
+               
+            </div>
+        </div>
+        
+        <!-- User list section -->
+    </div>
+
+    <!-- JavaScript code (to be added later) -->
+
+</body>
+</html>

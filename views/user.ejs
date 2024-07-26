@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    h2 {
+        margin-bottom: 10px;
+    }
+    
+    .users, .donations {
+        margin-bottom: 40px;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    table th, table td {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+    
+    table th {
+        background-color: #f2f2f2;
+        text-align: left;
+    }
+    
+    table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    
+    table tr:hover {
+        background-color: #f2f2f2;
+    }
+    
+    button {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    .home{
+            display:block;
+        height: auto;
+        width: auto;
+        font-size: medium;
+           margin:auto;
+           border:1px solid black;
+           background-color: brown; 
+        }
+    button:hover {
+        background-color: #45a049;
+    }</style>
+</head>
+<body>
+    <a href="admin.html"><button id="home">Home</button></a>
+    <h1>Admin Panel</h1>
+    <input type="search" id="searchInput" placeholder="User name">
+    <div class="users" id="myTable">
+        <h2>Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>City</th>
+                    <th>Blood Group</th>
+                    <th>phoneNumber</th>
+                    <th>role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(function(user) { %>
+                    <tr>
+                        <td><%= user.Name %></td>
+                        <td><%= user.username %></td>
+                        <td><%= user.city %></td>
+                        <td><%= user.blood %></td>
+                        <td><%= user.phone %></td>
+                        <td><%= user.role %></td>
+                        
+                        <td>
+                            <% if (user.role !== 'admin') { %>
+                                <button onclick="deleteUser('<%= user._id %>')">Delete</button>
+                            <% } %>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    
+    
+<script>function deleteUser(userId) {
+    if (confirm('Are you sure you want to delete this user?')) {
+        fetch(`/users/${userId}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to delete user');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert(data.message);
+            window.location.reload(); // Refresh the page after deletion
+        })
+        .catch(error => {
+            console.error('Error deleting user:', error);
+            alert('An error occurred while deleting user');
+        });
+    }
+}
+document.getElementById("searchInput").addEventListener("keyup", function() {
+            let input = this.value.toLowerCase();
+            let table = document.getElementById("myTable");
+            let rows = table.getElementsByTagName("tr");
+            rows[0].style.display = ""
+            for (let i = 1; i < rows.length; i++) {
+                let cells = rows[i].getElementsByTagName("td");
+                let found = false;
+                for (let j = 0; j < cells.length; j++) {
+                    let cellValue = cells[j].textContent || cells[j].innerText;
+                    if (cellValue.toLowerCase().indexOf(input) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        });
+</script>
+
+</body>
+</html>
